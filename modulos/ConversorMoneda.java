@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConversorMoneda {
-    // Todas las tasas en relación a USD
+
     private static final Map<String, Double> tasas = new HashMap<>();
 
     static {

@@ -6,31 +6,47 @@ import control.ControladorConversor;
 import paneles.PanelMasa;
 import paneles.PanelMoneda;
 import paneles.PanelTiempo;
+import paneles.PanelLongitud;
+import paneles.PanelTemperatura;
+import paneles.PanelVolumen;
+import paneles.PanelDatos;
 
 public class VistaPrincipal extends JFrame {
     private ControladorConversor controlador;
     private JTextArea historial;
 
     public VistaPrincipal() {
-        setTitle("Conversor Universal");
+        setTitle("Conversor");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600); // ventana más grande
+        setSize(900, 650); // ventana un poco más grande
         setLocationRelativeTo(null);
 
         getContentPane().setBackground(new Color(245, 245, 245));
 
         // Pestañas
-        JTabbedPane pestañas = new JTabbedPane();
+        JTabbedPane pestañas = new JTabbedPane(JTabbedPane.TOP); // arriba
         pestañas.setFont(new Font("Arial", Font.BOLD, 16));
         pestañas.setBackground(Color.WHITE);
 
+        // Centrar y dar más espacio entre pestañas
+        UIManager.put("TabbedPane.tabAreaInsets", new Insets(10, 40, 0, 40));
+
+        // Paneles
         PanelMasa panelMasa = new PanelMasa(this);
         PanelMoneda panelMoneda = new PanelMoneda(this);
         PanelTiempo panelTiempo = new PanelTiempo(this);
+        PanelLongitud panelLongitud = new PanelLongitud(this);
+        PanelTemperatura panelTemperatura = new PanelTemperatura(this);
+        PanelVolumen panelVolumen = new PanelVolumen(this);
+        PanelDatos panelDatos = new PanelDatos(this);
 
         pestañas.addTab("⚖ Masa", panelMasa);
         pestañas.addTab("💰 Moneda", panelMoneda);
         pestañas.addTab("⏳ Tiempo", panelTiempo);
+        pestañas.addTab("📏 Longitud", panelLongitud);
+        pestañas.addTab("🌡 Temperatura", panelTemperatura);
+        pestañas.addTab("🧪 Volumen", panelVolumen);
+        pestañas.addTab("💾 Datos", panelDatos);
 
         // Historial
         historial = new JTextArea(8, 30);
