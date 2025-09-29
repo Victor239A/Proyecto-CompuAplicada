@@ -1,11 +1,11 @@
-import control.ControladorConversor;
-import views.VistaPrincipal;
+import control.Controlador;
+import views.VistaInicial;
 
 public class Main {
     public static void main(String[] args) {
        
-        ControladorConversor controlador = new ControladorConversor();
-        VistaPrincipal vista = new VistaPrincipal();
+        Controlador controlador = new Controlador();
+        VistaInicial vista = new VistaInicial();
         vista.establecerControlador(controlador);
         vista.mostrar();
     }

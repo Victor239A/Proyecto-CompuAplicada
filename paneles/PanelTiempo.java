@@ -1,17 +1,17 @@
 package paneles;
 
-import views.VistaPrincipal;
+import views.VistaInicial;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class PanelTiempo extends JPanel {
-    private VistaPrincipal vista;
+    private VistaInicial vista;
     private JTextField campoValor;
     private JComboBox<String> comboDesde, comboHacia;
     private JLabel resultado;
 
-    public PanelTiempo(VistaPrincipal vista) {
+    public PanelTiempo(VistaInicial vista) {
         this.vista = vista;
 
         setLayout(new GridBagLayout());

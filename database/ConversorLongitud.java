@@ -1,4 +1,4 @@
-package modulos;
+package database;
 
 public class ConversorLongitud {
     public double convertir(double valor, String desde, String hacia) {
